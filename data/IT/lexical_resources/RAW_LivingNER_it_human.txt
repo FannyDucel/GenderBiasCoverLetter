@@ -1,0 +1,468 @@
+abitanti
+adolescente
+adolescenti
+adolescenza
+adulta
+adulti
+adulto
+agente commerciale
+agricoltore
+allenatore
+allergologo
+amici
+amico
+Antropologia
+anziani
+anziani
+anziano
+assistente di volo
+assistente sociale
+autista di autobus
+autista di camion
+autori
+autori
+bambini
+bambini
+bambino
+Bambino
+bambino
+Bambino
+Bambino maschio
+bambino maschio
+Bambino maschio
+bestiame
+bisnonna
+bisnonno
+cacciatore
+cadavere
+cameriera
+cameriere
+Cameriere
+cameriere
+cardiologo
+cardiologo
+caregiver
+casalinga
+casalinga
+caso indice
+Caso indice
+chirurghi
+chirurghi generali
+chirurgo
+chirurgo
+cliente
+clienti
+clinici
+compagni di viaggio
+compagno
+compagno
+compagno di viaggio
+comunità
+comunità
+concorrente
+coniugale
+coniugale
+coniuge
+contabile
+contatti
+contatti
+contatti sessuali
+contatto
+contatto
+contatto sessuale
+conviventi
+corriere
+costruttore
+cugini
+cugino
+cugino di secondo grado
+Cugino materno
+cuoco
+dentista
+dentista
+dermatologo
+dermatologo
+Direttore di banca
+discendenti
+donatore
+donatore
+donatori
+donna
+Donna
+Donna
+donna
+donne
+donne
+Dr
+Dr
+EAP
+ebanista
+elettricista
+elettrofisiologi
+ematologo
+ematologo
+emodinamista
+endocrinologo
+epidemiologo
+ex lavoratore dell'industria tessile
+ex moglie
+famiglia
+Famiglia
+FAMIGLIA
+famiglia
+FAMIGLIA
+Famiglia
+famiglia paterna
+famiglie
+Famiglie
+famiglie
+femmina
+femmina
+femminile
+femminile
+fetale
+fetale
+feto
+feto
+fidanzata
+fieno greco
+Fieno greco
+figli
+figlia
+figlia
+figlie
+figlie
+figlio
+figlio
+Figlio
+forestale
+fratelli
+fratelli
+Fratelli
+fratelli e sorelle
+fratelli e sorelle
+fratello
+Fratello
+fratello
+Fratello
+Friends
+genero
+genitori
+genitori
+Genitori
+gente
+gente
+giardiniere
+giovane
+giovani
+giovani adulti
+gioventù
+gioventù
+giudice
+guardia di sicurezza
+guida
+Hermanos
+Hombre
+Hombre
+Human
+impiegato in un allevamento di pesci
+in pensione
+in pensione
+In pensione
+incinta
+incinta
+individui
+Individui
+individui
+infanzia
+infanzia
+infermiera
+infermiera di emergenza
+ingegnere
+ingegnere agricolo
+ingegnere industriale
+insegnante
+Insegnante
+insegnante
+insegnante di inglese
+insegnante di musica
+insegnante di scuola guida
+insegnanti
+insegnanti
+intensivista
+interlocutore
+internista
+internista
+Lactande
+lavoratore
+lavoratore
+lavoratore agricolo
+lavoratore agricolo
+Lavoratore agricolo
+lavoratore amministrativo in una società mineraria
+lavoratore delle miniere
+lavoratore portuale
+lavoratori
+lavoratrice
+macellaio
+Macellaio
+macellaio
+madre
+Madre
+madre
+Madre
+manager
+manager di un'azienda di prosciutti
+MAP
+MAP
+marinaio
+marito
+marito
+Maschio
+maschio
+Maschio
+maschio
+materna
+materna
+materno
+matrimonio
+matrimonio
+maxillofacciale
+meccanico
+mediano
+medici
+medici
+medico
+medico
+medico della comunità
+medico di base
+medico di base
+medico di famiglia
+medico di famiglia
+medico generico
+medico generico
+medico legale
+medio
+membri
+membri della congregazione
+membri della famiglia
+membri della famiglia
+membro della famiglia
+membro della famiglia
+minore
+moglie
+moglie
+Moglie
+muratore
+muratori
+NB
+neonata
+neonatale
+neonatale
+neonati
+neonato
+Neonato
+neonato
+Neonato
+Neonato femmina
+neurologo
+neurologo
+neuropediatra
+nipote
+nipote
+nipoti
+nonna
+nonna
+nonna materna
+nonna materna
+nonni
+nonni
+nonno
+nonno
+nonno materno
+nonno materno
+nonno paterno
+Nonno paterno
+oftalmologi
+oncologi medici
+oncologo
+operaio edile
+operatore 1
+operatore 2
+operatori sanitari
+ortodontista
+ostetrica
+ostetrico
+otorinolaringoiatra
+padre
+Padre
+padre
+Padre
+parente
+parenti
+parenti
+parodontista
+parrucchiere
+partner
+Partner
+partner
+paterna
+patologo
+patrigno
+paziente
+Paziente
+PAZIENTE
+Paziente
+paziente
+PAZIENTE
+paziente donna
+Paziente donna
+PAZIENTE FEMMINILE
+Paziente femminile
+paziente maschio
+Paziente maschio
+PAZIENTE MASCHIO
+paziente maschio
+Paziente maschio
+PAZIENTE MASCHIO
+paziente pediatrico
+pazienti
+pazienti
+pediatra
+pediatra
+pediatra di base
+pediatra di base
+pediatri
+Pensionato
+persona
+persona
+personale
+PERSONALE
+personale
+PERSONALE
+personale del centro
+personale dell'ospedale
+personale dell'ospedale
+personale di neonatologia
+personale medico
+personale sanitario
+persone
+persone
+pescatore
+pescivendolo
+pilota commerciale
+pittore
+podologo
+polizia
+polizia
+popolazione
+popolazione
+portatore cronico
+portatore di HIV
+portatore nasale
+portatore nasale
+portatori cronici
+primo
+Prof
+professionisti della salute mentale
+programmatore di computer
+psichiatra
+psicologo
+psicologo
+Psicologo
+psicologo della scuola
+psicopatico
+pubblico
+pubertà
+quartiere
+quartiere
+radiologo
+radiologo
+radiologo interventista
+ragazza
+ragazza
+Ragazza
+ragazze
+ragazzi
+ragazzo
+ragazzo
+Ramo materno
+Ramo paterno
+Relatives
+reparto di ematologia
+residenti
+RN
+saldatore
+scolaro maschio
+signor
+soggetti
+soggetti
+soggetto
+sorella
+sorella
+Sorella
+sorella materna
+sorelle
+sorelle
+specialista
+specialista della retina
+specialista in oftalmologia
+specialisti
+specialisti in malattie infettive
+specialisti in Medicina di Famiglia e di Comunità
+spedizioniere
+Sposato
+stomatologo
+strega
+stuccatore
+studente
+Studente
+studente
+studente di scuola superiore
+studente insegnante
+studentessa
+tassista
+team clinico
+team di salute mentale della comunità
+terapeuta
+tesoriere
+testimone
+testimoni
+testimoni
+umano
+umano
+universitario
+uomini
+uomini
+uomo
+Uomo
+uomo
+Uomo
+urologi
+vedova
+venditore
+venditore di caramelle
+veterano dell'esercito
+veterinario
+viaggiatore
+viaggiatore
+viaggiatore maschio
+viaggiatori
+viaggiatori
+vicini
+vicino
+Violoncellista
+zia
+zia
+zia materna
+zia materna
+zia paterna
+zie paterne
+zii paterni
+zio
+zio
+zio materno
+zio materno
+zio paterno
+zio paterno
+Zio paterno

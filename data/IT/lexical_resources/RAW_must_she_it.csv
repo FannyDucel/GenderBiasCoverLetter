@@ -1,0 +1,297 @@
+ID,GENDERTERMS,POS
+it-0651,adulta adulto,Noun
+it-0346,ragazzo ragazza,Noun
+it-0338,sceriffo sceriffa,Noun
+it-0341,sviluppatore sviluppatrice,Noun
+it-0442,ebrea ebreo,Noun
+it-1038,giurato giurata,Noun
+it-1069,laureata laureato,Noun
+it-0925,lavoratrici lavoratori,Noun
+it-0448,maestra maestro,Noun
+it-0237,infermiera infermiere,Noun
+it-0337,vice-sceriffo vice-sceriffa,Noun
+it-0355,programmatori programmatrici,Noun
+it-0356,imprenditore imprenditrice,Noun
+it-0417,figlia figlio,Noun
+it-0418,fiiglia figlio,Noun
+it-0427,cretino cretina,Noun
+it-0533,candidati candidate,Noun
+it-0564,ragazzina ragazzino,Noun
+it-0790,fiiglia figlio,Noun
+it-0878,chirurgo chirurga,Noun
+it-0091,volontario volontaria,Noun
+it-0686,fiiglia figlio,Noun
+it-0749,negro negra,Noun
+it-0970,scrittrice scrittore,Noun
+it-0308,studente studentessa,Noun
+it-0424,infermiera infermiere,Noun
+it-0507,difensore difenditrice,Noun
+it-0614,rifugiato rifugiata,Noun
+it-0284,studentessa studente,Noun
+it-1083,programmatore programmatrice,Noun
+it-0832,esperta esperto,Noun
+,presentatrice presentatore,Noun
+it-0425,infermiera infermiere,Noun
+it-0322,delle dei;sue suoi;care cari;amiche amici;queste questi;anziane anziani;organizzatrice organizzatore;straordinaria straordinario;afroamericana afroamericano;una un;bianca bianco,Art/Prep;Adj-determiner;Adj-descriptive;Noun;Adj-determiner;Adj-descriptive;Noun;Adj-descriptive;Adj-descriptive;Art/Prep;Adj-descriptive
+it-0037,il la;mio mia;caro cara;amico amica;il la;truccatore truccatrice,Art/Prep;Adj-determiner;Adj-descriptive;Noun;Art/Prep;Noun
+it-0833,Il La;mio mia;geloso gelosa;ex-fidanzato ex-fidanzata;un una;manipolatore manipolatrice;uno una,Art/Prep;Adj-determiner;Adj-descriptive;Noun;Art/Prep;Noun;Art/Prep
+it-0140,capo capa,Noun
+it-0169,amico amica,Noun
+it-0227,supervisore supervisora,Noun
+it-0229,del della;mio mia;supervisore supervisora,Art/Prep;Adj-determiner;Noun
+it-0248,del della;mio mia;supervisore supervisora,Art/Prep;Adj-determiner;Noun
+it-0267,dal dalla;mio mia;medico medica,Art/Prep;Adj-determiner;Noun
+it-0302,Il La;mio mia;amico amica,Art/Prep;Adj-determiner;Noun
+it-0383,il la;mio mia;amico amica,Art/Prep;Adj-determiner;Noun
+it-0402,Un' Un;altra altro;studentessa studente,Art/Prep;Adj-determiner;Noun
+it-0423,la il;mia mio;compagna compagno,Art/Prep;Adj-determiner;Noun
+it-0552,Una Un;mia mio;amica amico,Art/Prep;Adj-determiner;Noun
+it-0555,Un' Un;altra altro;amica amico,Art/Prep;Adj-determiner;Noun
+it-0558,La Il;mia mio;amica amico,Art/Prep;Adj-determiner;Noun
+it-0680,al allla;mio mia;compagno compagna,Art/Prep;Adj-determiner;Noun
+it-0735,le i;sue suoi;figlie figli,Art/Prep;Adj-determiner;Noun
+it-0802,la il;seconda secondo;prigioniera prigioniero,Art/Prep;Adj-determiner;Noun
+it-0803,Il La;terzo terza;prigioniero prigioniera,Art/Prep;Adj-determiner;Noun
+it-0804,La Il;quarta quarto;prigioniera prigioniero,Art/Prep;Adj-determiner;Noun
+it-0805,Il La;primo prima;prigioniero prigioniera,Art/Prep;Adj-determiner;Noun
+it-0867,il la;mio mia;amico amica,Art/Prep;Adj-determiner;Noun
+it-0874,i le;miei mie;collaboratori collaboratrici,Art/Prep;Adj-determiner;Noun
+it-0886,un una;certo certa;professore professoressa,Art/Prep;Adj-determiner;Noun
+it-0553,una un;mia mio;amica amico;bagnata bagnato,Art/Prep;Adj-determiner;Noun;Adj-descriptive
+it-0517,il la;mio mia;amico amica;un una;interessato interessata,Art/Prep;Adj-determiner;Noun;Art/Prep;Adj-descriptive
+it-0872,della del;mia mio;amica amico;la il;sola solo,Art/Prep;Adj-determiner;Noun;Art/Prep;Noun
+it-0236,un' un;altra altro;infermiera infermiere;infermiera infermiere;un' un;altra altro;infermiera infermiere,Art/Prep;Adj-determiner;Noun;Noun;Art/Prep;Adj-determiner;Noun
+it-0554,il la;mio mia;ragazzo ragazza;gli le,Art/Prep;Adj-determiner;Noun;Pronoun
+it-0811,Un Una;mio mia;amico amica;stato stata;ricoverato ricoverata;rimasto rimasta,Art/Prep;Adj-determiner;Noun;Verb;Verb;Verb
+it-0197,la il;mia mio;una uno;delle dei;ricercatrici ricercatori,Art/Prep;Adj-determiner;Pronoun;Art/Prep;Noun
+it-0291,una un;una un;nuova nuovo;arrivata arrivato,Art/Prep;Art/Prep;Adj-descriptive;Noun
+it-0667,un un';un una;miglior migliore;osservatore osservatrice,Art/Prep;Art/Prep;Adj-descriptive;Noun
+it-0952,delle dei;La Il;prima primo;americana americano;una un;milionaria milionario;fatta fatto;la il;prima primo,Art/Prep;Art/Prep;Adj-determiner;Adj-descriptive;Art/Prep;Noun;Verb;Art/Prep;Adj-determiner
+it-0951,una un;un' un;infermiera infermiere;testarda testardo,Art/Prep;Art/Prep;Noun;Adj-descriptive
+it-1020,un un';un una;stato stata;chirurgo chirurga,Art/Prep;Art/Prep;Verb;Noun
+it-0017,del della;bugiardo bugiarda,Art/Prep;Noun
+it-0049,al alla;capo capa,Art/Prep;Noun
+it-0054,un un';esperto esperta,Art/Prep;Noun
+it-0065,un' un;autrice autore,Art/Prep;Noun
+it-0066,del della;fotografo fotografa,Art/Prep;Noun
+it-0101,un una;medico medica,Art/Prep;Noun
+it-0141,una uno;storica storico,Art/Prep;Noun
+it-0157,un una;chirurgo chirurga,Art/Prep;Noun
+it-0167,uno una;scienziato scienziata,Art/Prep;Noun
+it-0200,una un;bimba bimbo,Art/Prep;Noun
+it-0208,il la;direttore direttrice,Art/Prep;Noun
+it-0209,l' la;ingegnere ingegnera,Art/Prep;Noun
+it-0272,La Il;bambina bambino,Art/Prep;Noun
+it-0296,il la;monaco monaca,Art/Prep;Noun
+it-0297,al alla;monaco monaca,Art/Prep;Noun
+it-0343,uno una;storico storica,Art/Prep;Noun
+it-0354,un un';educatore educatrice,Art/Prep;Noun
+it-0376,Il la;neonato neonata,Art/Prep;Noun
+it-0379,un un';amico amica,Art/Prep;Noun
+it-0386,una uno;scienziata scienziato,Art/Prep;Noun
+it-0399,il la;dottor dottoressa,Art/Prep;Noun
+it-0401,lo la;studente studentessa,Art/Prep;Noun
+it-0428,Il La;professore professoressa,Art/Prep;Noun
+it-0440,Un Una;governatore governatrice,Art/Prep;Noun
+it-0449,un un';immigrato immigrata,Art/Prep;Noun
+it-0459,una uno;scienziata scienziato,Art/Prep;Noun
+it-0468,uno una;studente studentessa,Art/Prep;Noun
+it-0496,un una;creatore creatrice,Art/Prep;Noun
+it-0499,un una;cretino cretina,Art/Prep;Noun
+it-0503,un una;mercenario mercenaria,Art/Prep;Noun
+it-0509,il la;dottor dottoressa,Art/Prep;Noun
+it-0514,una uno;scienziata scienziato,Art/Prep;Noun
+it-0519,un un';americano americana,Art/Prep;Noun
+it-0524,un una;Americano Americana,Art/Prep;Noun
+it-0548,alle agli;infermiere infermieri,Art/Prep;Noun
+it-0560,una uno;studentessa studente,Art/Prep;Noun
+it-0576,Un Una;dittatore dittatrice,Art/Prep;Noun
+it-0595,uno una;studente studentessa,Art/Prep;Noun
+it-0607,del della;Professor Professoressa,Art/Prep;Noun
+it-0616,la il;vincitrice vincitore,Art/Prep;Noun
+it-0617,il la;medico medica,Art/Prep;Noun
+it-0618,il la;medico medica,Art/Prep;Noun
+it-0634,una uno;psicologa psicologo,Art/Prep;Noun
+it-0636,uno una;studente studentessa,Art/Prep;Noun
+it-0648,una uno;scienziata scienziato,Art/Prep;Noun
+it-0682,un una;giovanotto giovanotta,Art/Prep;Noun
+it-0708,alle ai;imprenditrici imprenditori,Art/Prep;Noun
+it-0785,un' un;immunologa immunologo,Art/Prep;Noun
+it-0787,un' un;infermiera infermiere,Art/Prep;Noun
+it-0820,un una;medico medica,Art/Prep;Noun
+it-0843,una un;australiana australiano,Art/Prep;Noun
+it-0854,il la;senatore senatrice,Art/Prep;Noun
+it-0873,una uno;scienziata scienziato,Art/Prep;Noun
+it-0875,una uno;studentessa studente,Art/Prep;Noun
+it-0891,la il;bibliotecaria bibliotecario,Art/Prep;Noun
+it-0901,una un;latina latino,Art/Prep;Noun
+it-0912,una un;amica amico,Art/Prep;Noun
+it-0914,un una;meteorologo meteorologa,Art/Prep;Noun
+it-0916,uno una;scettico scettica,Art/Prep;Noun
+it-0942,Un Una;inquinatore inquinatrice,Art/Prep;Noun
+it-0960,un una;banchiere banchiera,Art/Prep;Noun
+it-0962,un una;scienziato scienziata,Art/Prep;Noun
+it-0963,una uno;scienziata scienziato,Art/Prep;Noun
+it-0964,una uno;scienziata scienziato,Art/Prep;Noun
+it-0975,un una;climatologo climatologa,Art/Prep;Noun
+it-1016,un un';ipocondriaco ipocondriaca,Art/Prep;Noun
+it-1043,un' un;assassina assassino,Art/Prep;Noun
+it-1049,una uno;scienziata scienziato,Art/Prep;Noun
+it-1081,un una;paleoantropologo paleoantropologa,Art/Prep;Noun
+it-1084,i le;programmatori programmatrici,Art/Prep;Noun
+it-1087,una un;segretaria segretario,Art/Prep;Noun
+it-1090,le i;programmatrici programmatori,Art/Prep;Noun
+it-0007,la il;bambina bambino;ricca ricco,Art/Prep;Noun;Adj-descriptive
+it-0122,uno una;studente studentessa;universitario universitaria,Art/Prep;Noun;Adj-descriptive
+it-0181,un una;rifugiato rifugiata;politico politica,Art/Prep;Noun;Adj-descriptive
+it-0268,il la;guerriero guerriera;indiano indiana,Art/Prep;Noun;Adj-descriptive
+it-0358,Il La;fisico fisica;tedesco tedesca,Art/Prep;Noun;Adj-descriptive
+it-0364,un un';amico amica;preoccupato preoccupata,Art/Prep;Noun;Adj-descriptive
+it-0414,un una;tipo tipa;sedentario sedentaria,Art/Prep;Noun;Adj-descriptive
+it-0604,un una;ingegnere ingegnera;informatico informatica,Art/Prep;Noun;Adj-descriptive
+it-0646,una un;bambina bambino;affascinata affascinato,Art/Prep;Noun;Adj-descriptive
+it-0801,Il La;prigioniero prigioniera;alto alta,Art/Prep;Noun;Adj-descriptive
+it-0913,un una;professore professoresa;universitario universitaria,Art/Prep;Noun;Adj-descriptive
+it-0993,una un;ragazza ragazzo;problematica problematico,Art/Prep;Noun;Adj-descriptive
+it-1025,una un;sopravvissuta sopravvissuto;silenziosa silenzioso,Art/Prep;Noun;Adj-descriptive
+it-0220,uno una;studente studentessa;ossessivo ossessiva;compulsivo compulsiva,Art/Prep;Noun;Adj-descriptive;Adj-descriptive
+it-0261,un una;medico medica;ridefinito ridefinita;umano umana,Art/Prep;Noun;Adj-descriptive;Adj-descriptive
+it-0360,il la;matematico matematica;russo russa;vicino vicina,Art/Prep;Noun;Adj-descriptive;Adj-descriptive
+it-0758,un una;professore professoressa;nero nera;un un';nero nera,Art/Prep;Noun;Adj-descriptive;Art/Prep;Adj-descriptive
+it-0855,un una;provocatore provocatrice;pittoresco pittoresca;del della;nordcoreano nordcoreana,Art/Prep;Noun;Adj-descriptive;Art/Prep;Adj-descriptive
+it-0014,il la;ginecologo ginecologa;ostetrico ostetrica;andato andata;un una;completo completa;estraneo estranea,Art/Prep;Noun;Adj-descriptive;Verb;Art/Prep;Adj-descriptive;Noun
+it-0020,un una;poeta poetessa;persiano persiana;chiamato chiamata;il la;mio mia;amico amica,Art/Prep;Noun;Adj-descriptive;Verb;Art/Prep;Adj-determiner;Noun
+it-0016,il la;messaggero messaggera;questo questa;estraneo estranea,Art/Prep;Noun;Adj-determiner;Noun
+it-0119,Il La;studioso studiosa;un una,Art/Prep;Noun;Art/Prep
+it-0307,una un;signora signore;la il,Art/Prep;Noun;Art/Prep
+it-0454,del della;fondatore fondatrice;un una,Art/Prep;Noun;Art/Prep
+it-0475,un' un;amica amico;un' un,Art/Prep;Noun;Art/Prep
+it-1017,uno una;scienziato scienziata;un un',Art/Prep;Noun;Art/Prep
+it-0092,un un';avvocato avvocatessa;un una;finanziario finanziaria;entrato entrata,Art/Prep;Noun;Art/Prep;Adj-descriptive;Verb
+it-0515,Uno Una;scienziato scienziata;un una;mio mia;amico amica;preoccupato preoccupata,Art/Prep;Noun;Art/Prep;Adj-determiner;Noun;Adj-descriptive
+it-0217,un una;ingegnere ingegnera;un un';altro altra;matematico matematica;riusciti riuscite,Art/Prep;Noun;Art/Prep;Adj-determiner;Noun;Verb
+it-0061,un una;medico medica;un una;ricercatore ricercatrice,Art/Prep;Noun;Art/Prep;Noun
+it-0210,al alla;matematico matematica;un una;matematico matematica,Art/Prep;Noun;Art/Prep;Noun
+it-0219,una un;infermiera infermiere;un' un;ostetrica ostetrico,Art/Prep;Noun;Art/Prep;Noun
+it-0326,un un';adulto adulta;il la;bambino bambina,Art/Prep;Noun;Art/Prep;Noun
+it-0333,un un';avvocato avvocatessa;un un';avvocato avvocatessa,Art/Prep;Noun;Art/Prep;Noun
+it-0398,uno una;psicologo psicologa;il la;dottor dottoressa,Art/Prep;Noun;Art/Prep;Noun
+it-0508,il la;dottor dottoressa;uno una;scienziato scienziata,Art/Prep;Noun;Art/Prep;Noun
+it-0512,una un;professoressa professore;la lo;scienziata scienziato,Art/Prep;Noun;Art/Prep;Noun
+it-0900,una uno;tosta tosto;una un;latina latino,Art/Prep;Noun;Art/Prep;Noun
+it-0980,una un;ragazzina ragazzino;un' un;adulta adulto,Art/Prep;Noun;Art/Prep;Noun
+it-0275,Un Una;bambino bambina;un una;bambino bambina;indiano indiana,Art/Prep;Noun;Art/Prep;Noun;Adj-descriptive
+it-0310,un una;medico medica;un una;medico medica;premuroso premurosa,Art/Prep;Noun;Art/Prep;Noun;Adj-descriptive
+it-0278,un una;poeta poetessa;un una;commediografo commediografa;un una,Art/Prep;Noun;Art/Prep;Noun;Art/Prep
+it-0899,La Il;ragazza ragazzo;imbranata imbranato;quella quello;portoricana portoricano;paffuta paffuto,Art/Prep;Noun;Noun;Pronoun;Adj-descriptive;Adj-descriptive
+it-0956,una un;dominicana-americana dominicano-americano;vincitrice vincitore;apparsa apparso,Art/Prep;Noun;Noun;Verb
+it-0089,il la;capitano capitana;impegnato impegnata,Art/Prep;Noun;Verb
+it-0117,un una;programmatore programmatrice;associato associata,Art/Prep;Noun;Verb
+it-0506,un una;europeo europea;ucciso uccisa,Art/Prep;Noun;Verb
+it-0572,un una;artigiano artigiana;venuto venuta,Art/Prep;Noun;Verb
+it-0631,un una;scienziato scienziata;stato stata,Art/Prep;Noun;Verb
+it-0784,una uno;scienziata scienziato;risvegliata risvegliato,Art/Prep;Noun;Verb
+it-0842,il la;navigatore navigatrice;salito salita,Art/Prep;Noun;Verb
+it-1095,uno una;scienziato scienziata;venuto venuta,Art/Prep;Noun;Verb
+it-0276,una un;bambina bambino;rannicchiata rannicchiato;alla al;alla al;alla al;quella quel;quella quel,Art/Prep;Noun;Verb;Art/Prep;Art/Prep;Art/Prep;Adj-determiner;Adj-determiner
+it-0979,la il;data dato;sposa sposo,Art/Prep;Verb;Noun
+it-0004,bambina bambino,Noun
+it-0033,adulto adulta,Noun
+it-0034,ragazzo ragazza,Noun
+it-0041,esploratore esploratrice,Noun
+it-0043,ragazzo ragazza,Noun
+it-0045,ragazzo ragazza,Noun
+it-0086,capitano capitana,Noun
+it-0118,medico medica,Noun
+it-0123,medico medica,Noun
+it-0142,storica storico,Noun
+it-0193,autore autrice,Noun
+it-0215,compositore compositrice,Noun
+it-0253,supervisore supervisora,Noun
+it-0300,lanciatori lanciatrici,Noun
+it-0321,avvocato avvocatessa,Noun
+it-0349,grafico grafica,Noun
+it-0385,scienziata scienziato,Noun
+it-0387,scienziata scienziato,Noun
+it-0408,infermiera infermiere,Noun
+it-0443,bianca bianco,Noun
+it-0526,narratore narratrice,Noun
+it-0551,educatrice educatore,Noun
+it-0577,storico storica,Noun
+it-0590,figlio figlia,Noun
+it-0624,agricoltore agricoltrice,Noun
+it-0626,lavoratori lavoratrici,Noun
+it-0641,ricercatrice ricercatore,Noun
+it-0643,scienziato scienziata,Noun
+it-0661,ricercatore ricercatrice,Noun
+it-0750,veterano veterana,Noun
+it-0755,amica amico,Noun
+it-0791,poliziotta poliziotto,Noun
+it-0852,fondatore fondatrice,Noun
+it-0870,sviluppatore sviluppatrice,Noun
+it-0919,studente studentessa,Noun
+it-0920,scienziato scienziata,Noun
+it-0935,alleata alleato,Noun
+it-0941,studente studentessa,Noun
+it-0957,curatrice curatore,Noun
+it-0976,scienziato scienziata,Noun
+it-0982,modella modello,Noun
+it-0987,sopravvissuta sopravvissuto,Noun
+it-1055,sostenitore sostenitrice,Noun
+it-1085,programmatori programmatrici,Noun
+it-1093,creatrici creatori,Noun
+it-0094,pompiere pompiera;volontario volontaria,Noun;Adj-descriptive
+it-0166,autore autrice;letto letta,Noun;Adj-descriptive
+it-0600,professore professoressa;universitario universitaria,Noun;Adj-descriptive
+it-0810,ricercatore ricercatrice;universitario universitaria,Noun;Adj-descriptive
+it-0953,curatrice curatore;diverse diversi,Noun;Adj-descriptive
+it-1057,secondogenita secondogenito;piccola piccolo,Noun;Adj-descriptive
+it-0124,scienziati scienziate;soli sole;allo alla;scienziato scienziata,Noun;Adj-descriptive;Art/Prep;Noun
+it-0495,sopravvissuta sopravvissuto;stessa stesso,Noun;Adj-determiner
+it-0367,consumatore consumatrice;stesso stessa;scioccato scioccata;arrabbiato arrabbiata,Noun;Adj-determiner;Adj-descriptive;Adj-descriptive
+it-0350,professore professoressa;un un',Noun;Art/Prep
+it-0332,usciere usciera;un una;anziano anziana,Noun;Art/Prep;Adj-descriptive
+it-0195,ricercatori ricercatrici;il la;Dottor Dottoressa,Noun;Art/Prep;Noun
+it-0005,Dottor Dottoressa;un un';Italoamericano Italoamericana;diventato diventata;Dottor Dottoressa;Dottor Dottoressa,Noun;Art/Prep;Noun;Verb;Noun;Noun
+it-0230,infermiera infermiere;infermiera infermiere,Noun;Noun
+it-0563,avvocato avvocatessa;difensore difenditrice,Noun;Noun
+it-0635,ricercatrice ricercatore;professoressa professore,Noun;Noun
+it-0642,biologo biologa;ingegnere ingegnera,Noun;Noun
+it-0683,sindaco sindaca;sindaco sindaca,Noun;Noun
+it-0992,ricercatrice ricercatore;educatrice educatore,Noun;Noun
+it-0415,avvocato avvocatessa;viaggiatore viaggiatrice;arabo araba,Noun;Noun;Adj-descriptive
+it-0954,afro-latina afro-latino;curatrice curatore;afro-latina afro-latino;una uno;poche pochi;tutta tutto;stessa stesso;stata stato;negata negato,Noun;Noun;Adj-descriptive;Pronoun;Pronoun;Adj-determiner;Adj-determiner;Verb;Verb
+it-0420,infermiere infermieri;infermiere infermieri;professioniste professionisti,Noun;Noun;Noun
+it-0895,poliziotte poliziotti;paramediche paramedici;sarte sarti,Noun;Noun;Noun
+it-0056,allevatori allevatrici;allevatori allevatrici;produttori produttrici;esperti esperte;quelli quelle;esperti esperte,Noun;Noun;Noun;Noun;Pronoun;Noun
+it-0177,adulto adulta;conosciuto conosciuta,Noun;Verb
+it-0168,contadino contadina;vestito vestita;il la;contadino contadina,Noun;Verb;Art/Prep;Noun
+it-0390,bambino bambina;cresciuto cresciuta;trasportato trasportata,Noun;Verb;Verb
+it-0690,sospettati sospettate;stati state;avvistati avvistate,Noun;Verb;Verb
+it-0780,narratore narratrice;stato stata;affascinato affascinata,Noun;Verb;Verb
+it-0450,uno una;dei delle;primissimi primissime;scienziati scienziate;informatici informatiche,Pronoun;Art/Prep;Adj-descriptive;Noun;Adj-descriptive
+it-0711,Uno Una;dei delle;miei mie;scienziati scienziate,Pronoun;Art/Prep;Adj-determiner;Noun
+it-0738,una uno;delle dei;mie miei;amiche amici;una un;bellissima bellissimo;keniana keniano,Pronoun;Art/Prep;Adj-determiner;Noun;Art/Prep;Adj-descriptive;Adj-descriptive
+it-0088,una uno;delle degli;inquiline inquilini,Pronoun;Art/Prep;Noun
+it-0128,uno una;dei delle;ballerini ballerine,Pronoun;Art/Prep;Noun
+it-0303,uno una;dei delle;innovatori innovatrici,Pronoun;Art/Prep;Noun
+it-0940,uno una;degli delle;studenti studentesse,Pronoun;Art/Prep;Noun
+it-0154,uno una;dei delle;fondatori fondatrici;il la;Dottor Dottoressa,Pronoun;Art/Prep;Noun;Art/Prep;Noun
+it-0421,nata nato;la il;prima primo;infermiera infermiere,Verb;Art/Prep;Adj-descriptive;Noun
+it-0029,diventato diventata;uno una;sommozzatore sommozzatrice,Verb;Art/Prep;Noun
+it-0053,diventato diventata;un una;esperto esperta,Verb;Art/Prep;Noun
+it-0058,interessato interessata;un una;mago maga,Verb;Art/Prep;Noun
+it-0170,considerato considerata;lo la;strano strana,Verb;Art/Prep;Noun
+it-0467,stata stato;la il;prima primo,Verb;Art/Prep;Noun
+it-0698,diventata diventato;una un;veterinaria veterinario,Verb;Art/Prep;Noun
+it-0742,diventata diventato;una uno;studentessa studente,Verb;Art/Prep;Noun
+it-0198,spinte spinti;ricercatrice ricercatore,Verb;Noun
+it-0746,arrivato arrivata;antropologo antropologa,Verb;Noun
+it-0776,assunto assunta;curatore curatrice,Verb;Noun
+it-0824,diventato diventata;scalatore scalatrice,Verb;Noun
+it-0945,diventata diventato;infermiera infermiere,Verb;Noun
+it-1000,diventata diventato;architetta architetto,Verb;Noun
+it-1074,tornata tornato;istruttrice istruttore,Verb;Noun
+it-0592,entrato entrata;diventato diventata;un una;filantropo filantropa;orientato orientata,Verb;Verb;Art/Prep;Noun;Verb
+it-0628,stato stata;assunto assunta;capo capa,Verb;Verb;Noun
+it-0797,protetto protetta;sopravvissuto sopravvissuta;diventato diventata;un un';adulto adulta,Verb;Verb;Verb;Art/Prep;Noun
