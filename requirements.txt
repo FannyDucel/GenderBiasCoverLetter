@@ -1,0 +1,7 @@
+transformers
+torch
+pandas
+spacy
+collections
+tqdm
+sklearn

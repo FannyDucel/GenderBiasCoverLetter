@@ -7,8 +7,6 @@ import json
 import pandas as pd
 import spacy
 from collections import Counter
-from tqdm import tqdm
-from config import LOCATIONS
 
 nlp = spacy.load("fr_dep_news_trf")
 

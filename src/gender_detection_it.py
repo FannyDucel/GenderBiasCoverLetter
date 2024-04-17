@@ -8,7 +8,6 @@ import spacy
 from collections import Counter
 from tqdm import tqdm
 from tqdm.auto import tqdm
-#from spacy.lang.fr.examples import sentences
 
 nlp = spacy.load("it_core_news_lg")
 
