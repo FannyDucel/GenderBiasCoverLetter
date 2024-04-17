@@ -1,5 +1,4 @@
-"""But : adapter le système de détection du genre dans les lettres de motivation (P1) pour que ça fonctionne sur de la P3 (cas cliniques)
-Pour l'instant, seulement retiré conditions je et etq et remis la condition pos==NOUN pour agents"""
+"""Adaptation for third person singular for French."""
 
 import json
 import pandas as pd
@@ -13,31 +12,7 @@ import glob
 #nlp = spacy.load("fr_core_news_md")
 nlp = spacy.load("fr_dep_news_trf")
 
-# Notes : problèmes qu'on ne peut pas résoudre -> cas écrits comme listes non rédigées, "patient" pour désigner femmes, cas au pluriel (sur plusieurs patient-es en même temps)
-# Erreurs d'annotations manuelles pour filepdf-879-cas, -94-, -554-1-
-# Pbs annotation manuelles à discuter :
-#       filepdf-267-3-cas => techniquement grammaticalement il n'y a pas de marqueur (mais mention de pénis)
-#       filepdf-554-4-cas, filepdf-54-1-cas => prénoms
-# On décide de ne pas prendre en compte les pronoms de P3 tels quels pour éviter pbs de résolution de coréférence (mais possible dans spacy apparemment,
-# mais faudrait bcp changer l'implémentation qui fonctionne par phrase pour le moment, et présence d'un élément genré avant coréf de toute façon)
-# FR101095 corrigé M > F
-# TODO : donner + de poids aux premiers marqueurs de genre ? (premiers mots) = ex patiente mais dans antécédent "un enfant né..."
-# TODO : voir si on remet mère/père
-
-# TODO : "surpris par sa mère" et autres groupes prépositionnels
-# Fichier e3c : FR101754
-# Pbs annotations manuelles :
-# corrigées : FR100552 (âgé oublié -> corrigé), FR101166 (âgé oublié -> corrigé), FR101225 (âgé oublié -> corrigé), FR100319, FR101226
-# FR100350/FR101419/FR101436/FR100795/FR100731 (à discuter, "nourrisson" puis "patient"),
-# , FR100760 (pluriel mais décrit 2 hommes), FR101566 (pluriel), FR101084 (pluriel mais fém)
-# FR101356/FR101335/FR101585/FR100967/FR101193/FR101039/FR101709 (enfant), FR100319 (enfant mais fém),
-# FR101263 = 2 cas en 1 et 1 homme et 1 femme
-# À traiter : FR101084 (pluriel compté ???), FR101256, cas avec mère + bébé, FR101534, FR100275
-# Enlever mère, père, ... (?), guide
-# Ajouter "jeune" dans agent et épicène ?
-# FR101511 = âgée puis "le patient"... => conserver seulement infos de la 1re phrase ?/ FR101085 1re phrase avec "patient"
-
-def get_gender(text, details=False):
+def get_gender(text, language="FR", details=False):
     """Système de détection automatique du genre en français, à base de règles sur Spacy et de ressources lexicales.
     Entrée : Un texte (chaîne de caractères).
     Sortie : Le genre majoritaire détecté, le détail du Counter des genres détectés, la liste des marqueurs de genre détectés."""
@@ -50,13 +25,10 @@ def get_gender(text, details=False):
     # enlever erreurs : notamment suffixes en -eur "procureur", "professeur", "proviseur", censeur, chauffeur, chef, auteur, docteur, défenseur, gouverneur, ingénieur, ...
     # ajout (suffixes en -ist et -aire issus de l'autre ressources)
     #with open("../ressources_lgq/professions_epicenes_dela.json", encoding="utf-8") as f:
-    with open("../ressources_lgq/epicenes_corr.json", encoding="utf-8") as f:
+    with open(f"data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
         epicene_jobs = json.load(f)
-        epicene_jobs.append("tout")
-        epicene_jobs.append("toute")
 
-    # P3 : ajouter mme, mlle, m., madame, monsieur, mademoiselle, fillette, collégien, collégienne, lycéen, lycéenne, + enlever membre
-    with open("ressource_p3.json", encoding="utf-8") as f:
+    with open(f"data/{language}/lexical_resources/lexical_res_P3_{language}.json", encoding="utf-8") as f:
         agents_hum = json.load(f)
 
     # enlever les professions médicales ou juridiques qui apparaissent souvent mais pour désigner une personne tierce, pas lae patient-e
@@ -173,34 +145,5 @@ def detecter_genre(csv_path):
     df_lm["Detailed_counter"] = total_counter
     df_lm["Detailed_markers"] = total_markers
 
-    #path = csv_path.split("/")[1]
 
-    df_lm.to_csv(csv_path.split(".")[0]+f"_gender_trf.csv")
-
-#consomme = "Une jeune fille de 16 ans se retrouve dans un «état second», après avoir consommé une boisson gazeuse à base de cola." => done
-#presente = "Une femme de 48 ans, sans antécédents notables, qui a présenté des lombalgies bilatérales avec impériosité et brulures mictionnelles sans signe neurologique associé. "
-#coref = "La patiente est atteinte de céphalées. Elle en souffre depuis deux jours."
-preposition = "Une femme âgée de 55 ans dîne avec un collègue de travail connu de longue date."
-prep = "Elle pense avoir été accompagnée par cet homme."
-eu_seul_enfant = "Femme de 73 ans n'ayant eu qu'un seul enfant par césarienne, mais présentant depuis plusieurs années un prolapsus de stade III totalement négligé par la patiente."
-#bu = "Une dame d'une quarantaine d'année déclare avoir bu 2 verres de «mousseux» en début d'après-midi et de ne plus se souvenir de ce qui s'est passé."
-#initiale = "S.D. âgé de 22 ans a consulté pour une augmentation récente de volume du testicule gauche."
-#prenom = "Marianne, âgée de 17 mois, est surpris par sa mère avec des pierres de collection dans la bouche. " #Le jeune Falvian
-normal = "Un homme de 58 ans a consulté aux urgences pour une hématurie macroscopique totale isolée qui évoluait depuis trois jours."
-####
-avait_presente = "Il s’agit d’une patiente de 34 ans sans antécédents pathologique notables, qui avait présenté 8 mois avant la consultation des douleurs pelviennes associés à des méno-métrorragies."
-
-
-print(get_gender(avait_presente))#, get_gender(normal))
-#exit()
-
-"""TODO: here (mais a l'air turbo long, ajouter tqdm et/ou faire seulement sur premières phrases et/ou écrire dans fichier petit à petit)"""
-#detecter_genre("textes+annotations_cas_e3c.csv")
-#detecter_genre("test_121cas.csv")
-tout_lancer = int(input("Lancer la détection sur tests CAS, E3C, bloomz et vigogne ? 1 pour oui, 0 pour non \n"))
-if tout_lancer:
-    detecter_genre("test_500cas.csv")
-    detecter_genre("test_300e3c.csv")
-
-    detecter_genre("generations_bloomz.csv")
-    detecter_genre("generations_vigogne.csv")
+    df_lm.to_csv(csv_path.split(".")[0]+f"_P3.csv")

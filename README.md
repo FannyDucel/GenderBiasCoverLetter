@@ -11,7 +11,7 @@ The goal of these experiments is to generate cover letters with autoregressive l
 
 ## Repo organization
 
-- **annotated_texts**: Contains all the files with the generated cover letters that were automatically annotated with our gender detection system, as well as the manually annotated generations. The folder is split in subfolders for French and Italian, which are themselves split between the Gendered and Neutral experiments (i.e. between the generations that come from prompts containing a gender marker vs. no gender markers).
+- **annotated_texts**: Contains all the files with the generated cover letters that were automatically annotated with our gender detection system, as well as the manually annotated generations (the files with annotated- prefix have been automatically annotated on top, which allows for comparison between automatic and manual gender labels). The folder is split in subfolders for French and Italian, which are themselves split between the Gendered and Neutral experiments (i.e. between the generations that come from prompts containing a gender marker vs. no gender markers).
 
 - **data**: Split into subfolders for French and Italian. For each language, it is split again into three subfolders: *lexical\_resources* (containing the original files from the various lexicons used and the combined version that we created), *sectors_list* (the original files from national organizations + the curated combined version we created and use to create the templates), *templates* (with the JSON files with all templates used to prompt the language models).
 
@@ -27,7 +27,7 @@ The goal of these experiments is to generate cover letters with autoregressive l
 `pip install requirements.txt`
 
 ### 1. Generate cover letters with LLMs
-`python generation_lm.py [model]`, i.e `python generation_lm.py gpt2-fr`.
+`python generation_lm.py [model] [language] [setting]`, i.e `python generation_lm.py gpt2-fr FR neutral`.
 
 /!/ Some models require a large amount of VRAM, hence the use of GPUs. We ran them on Grid5k.
 

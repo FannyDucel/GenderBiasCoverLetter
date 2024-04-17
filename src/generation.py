@@ -1,24 +1,20 @@
-import glob
 import csv
-import pandas as pd
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 torch.cuda.empty_cache()
 import json
 import sys
-#from generation_lm_7b import generate_prompt
 from tqdm.auto import tqdm
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 models = {
-   # "gepetto": "LorenzoDeMattei/GePpeTto",
     "xglm-2.9B": "facebook/xglm-2.9B",
-    #"gpt2-it":"GroNLP/gpt2-small-italian",
-    #"mgpt":"ai-forever/mGPT",
-    #"loquace-7b":"cosimoiaia/Loquace-7B",
-    #"camoscio-7b":"sag-uniroma2/extremITA-Camoscio-7b",
     "cerbero-7b": "galatolo/cerbero-7b",
-    #"fauno-7b": "andreabac3/Fauno-Italian-LLM-7B" #intialisation différente avec peft et llama ?
+    "gpt2-fr":"asi/gpt-fr-cased-base",
+    "vigogne-2-7b":"bofenghuang/vigogne-2-7b-instruct",
+    "bloom-7b":"bigscience/bloom-7b1",
+    "bloom-560m": "bigscience/bloom-560m",
+    "bloom-3b":"bigscience/bloom-3b"
 }
 
 def generate_prompt(text, model, tokenizer, gen_args):
@@ -31,7 +27,9 @@ def generate_prompt(text, model, tokenizer, gen_args):
         output = model.generate(**gen_args)
         return tokenizer.decode(output[0], skip_special_tokens=False).replace('</s>', '')
 
-with open("templates_it_genre_fin.json", encoding="utf-8") as f:
+language = sys.argv[2]
+setting = sys.argv[3]
+with open(f"data/{language}/templates/{setting}/templates_{setting}_{language}.json", encoding="utf-8") as f:
     templates = json.load(f)
 
 output = [] # List of lists
@@ -58,36 +56,15 @@ gen_args_sampling1 = {
     "do_sample": True,
     "top_p": 0.75,
     "top_k": 100,
-    # "temperature":temp/10,
     "max_new_tokens": 200,
 }
 gen_args_sampling2 = {
     "do_sample": True,
     "top_p": 0.95,
     "top_k": 10,
-    # "temperature":temp/10,
     "max_new_tokens": 200,
 }
-"""
-from vllm import LLM, SamplingParams
-sampling_params1 = SamplingParams(top_p=0.75, top_k=100, max_tokens=200)
-sampling_params2 = SamplingParams(top_p=0.95, top_k=10, max_tokens=200)
-llm = LLM(model=hfpath)  # Name or path of your model
-#output = llm.generate("Hello, my name is")
-#print(output)
 
-for theme, prompt_list in tqdm(templates.items()):
-    outputs1 = llm.generate(prompt_list*3, sampling_params1)
-    outputs2 = llm.generate(prompt_list*3, sampling_params2)
-    for i, output in enumerate([outputs1, outputs2]):
-        with open(f"it_coverletter_{model_name}_vllm.csv", "a", encoding="utf-8") as f:
-            if i == 0:
-                output_sampling = ["top_p:0.75", "top_k:100", model_name, theme, output.prompt, output.outputs[0].text]
-            else:
-                output_sampling = ["top_p:0.95", "top_k:10", model_name, theme, output.prompt, output.outputs[0].text]
-            writer = csv.writer(f)
-            writer.writerows([output_sampling])
-"""
 prefix = ""
 if model_name == "cerbero-7b":
 	prefix = "[|Umano|] Scrivere una lettera di presentazione. [|Assistente|] "
@@ -98,11 +75,24 @@ for theme, prompt_list in tqdm(templates.items()):
         for prompt in prompt_list:
             for _ in range(3):
                 answer = generate_prompt(prefix+prompt, model, tokenizer, gen_args_sampling)
-                if i==0:
-                    output_sampling=["top_p:0.75", "top_k:100", model_name, theme, prompt, answer]
-                else:
-                    output_sampling=["top_p:0.95", "top_k:10", model_name, theme, prompt, answer]
+                if setting == "gendered":
+                    if language == "FR":
+                        genre = [
+                            'Prompt_fém' if "diplômée" in prompt else 'Prompt_inclusif_parenth' if "diplômé(e)" in prompt else 'Prompt_inclusif_median' if "diplômé·e" in prompt else 'Prompt_masc' if "diplômé" in prompt else '']
+                    if language == "IT":
+                        genre = [
+                            'Prompt_fém' if "laureata" in prompt else 'Prompt_inclusif_parenth' if "laureatə" in prompt else 'Prompt_masc' if "laureato" in prompt else '']
+                    if i==0:
+                        output_sampling=["top_p:0.75", "top_k:100", model_name, theme, prompt, genre, answer]
+                    else:
+                        output_sampling=["top_p:0.95", "top_k:10", model_name, theme, prompt, genre, answer]
 
-                with open(f"it_coverletter_{model_name}_genre.csv", "a", encoding="utf-8") as f:
+                else:
+                    if i==0:
+                        output_sampling=["top_p:0.75", "top_k:100", model_name, theme, prompt, genre, answer]
+                    else:
+                        output_sampling=["top_p:0.95", "top_k:10", model_name, theme, prompt, genre, answer]
+
+                with open(f"generated_texts/{language}/{setting}_prompts/coverletter_{setting}_{language.lower()}_{model_name}.csv", "a", encoding="utf-8") as f:
                     writer = csv.writer(f)
                     writer.writerows([output_sampling])

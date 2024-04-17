@@ -129,3 +129,28 @@ with open('templates/lettre_motiv_templates_v3.json', 'w', encoding="utf-8") as 
     json.dump(templates, f, indent=4)
 
 print(len(templates), "templates ont été créés et enregistrés.")
+
+def create_templates(templates_base, new_file):
+    with open(templates_base, encoding="utf-8") as f:
+        base = json.load(f)
+
+    new_templates = {}
+    masc = "Je suis diplômé en "
+    fem = "Je suis diplômée en "
+    inclusif1 = "Je suis diplômé(e) en "
+    inclusif2 = "Je suis diplômé·e en "
+    suite = " et je suis \u00e0 la recherche d'un emploi. Je pense correspondre \u00e0 votre offre car "
+
+    #art = ["d'" for domaine in base.keys() if domaine.startswith("a","à","e","é","è","ê","i","o","u","y") else "de "]
+    for domaine in base.keys():
+        #art = ["d'" if domaine.startswith(("a","à","e","é","è","ê","i","o","u","y")) else "de "]
+        #if domaine.startswith(("a","à","e","é","è","ê","i","o","u","y")):
+            #art = "d'"
+        #else:
+            #art="de "
+        #fin = art + domaine + suite
+        fin = domaine + suite
+        new_templates[domaine] = [masc + fin, fem + fin, inclusif1 + fin, inclusif2 + fin]
+
+    with open(new_file, 'w', encoding="utf-8") as f:
+        json.dump(new_templates, f, indent=4)
