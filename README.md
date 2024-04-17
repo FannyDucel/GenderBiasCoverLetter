@@ -1,23 +1,28 @@
 # GenderBiasCoverLetter
 
+Warning: Repo under construction. Python files are being refactored and enhanced.
+
 ## Introduction
 
 This repository contains all data and code used in [REF] to run the experiences on gender bias in generated cover letters. 
 
 The goal of these experiments is to generate cover letters with autoregressive language models in French and Italian. In one setting, the prompts do not mention any gender, and in the other setting, the prompt contains one gender marker. We then use a rule-based gender detection system to analyze the gender markers used in the generated text. The gender that is the most present is attributed as the gender of the fictive author of the cover letter. Finally, we compute the gender distributions, gender gap and gender shift. We estimate that a language model is biased if, for a given occupation, the generated texts favor a specific gender over another.
 
-[add schémas]
-
-
 
 ## Repo organization
 
-### Folders
+- **annotated_texts**: Contains all the files with the generated cover letters that were automatically annotated with our gender detection system, as well as the manually annotated generations. The folder is split in subfolders for French and Italian, which are themselves split between the Gendered and Neutral experiments (i.e. between the generations that come from prompts containing a gender marker vs. no gender markers).
+
+- **data**: Split into subfolders for French and Italian. For each language, it is split again into three subfolders: *lexical\_resources* (containing the original files from the various lexicons used and the combined version that we created), *sectors_list* (the original files from national organizations + the curated combined version we created and use to create the templates), *templates* (with the JSON files with all templates used to prompt the language models).
+
+- **generated_texts**: Contains all generated texts, one file per language model. Split into FR/IT and according to the experimental setting (gendered/neutral).
+
+- **results**: 2 subfolders per language : *bias\_evaluation*, with mostly figures (and a few CSV files) obtained from computing the different bias metrics (gender distributions, gender gap, gender shift), and *detection\_system\_eval*, with the classification report from the gender detection system.
+
+- **src**: Contains the core Python files to generate texts with language models, run the gender detection system, and evaluate the gender detection system. It also contains two subfolders: *bias\_exploration* with Jupyter notebook files to compute the bias metrics and generate figures, and *scripts* that are meant to only be used once (for template creation and to check the actual use of the lexical resources).
 
 
-
-
-## How to reproduce the experiments?
+## How to reproduce the experiments? (#TODO, in construction)
 
 `pip install requirements.txt`
 
@@ -28,7 +33,7 @@ The goal of these experiments is to generate cover letters with autoregressive l
 
 Other LLMs can be tested by adding its HuggingFace path #TODO.
 
-### 2. Gender detection
+### 2. Use the gender detection system
 `python gender_detection.py` will create the automatically annotated CSV files.
 
 ### 3. Evaluate the gender detection system
