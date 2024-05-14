@@ -100,6 +100,9 @@ def gender_shift(df):
 all_sorted_gap, all_masc_gap, all_fem_gap = gender_gap(topics)
 mean_gap_total = sum([el[1] for el in all_sorted_gap])/len(all_sorted_gap)
 print("The global Gender Gap for", language, "in the", type_expe ,"setting is of", mean_gap_total)
+print("The 10 professional fields with the highest Gender Gaps are", all_sorted_gap[:10])
+print("The 10 professional fields with the lowest Gender Gaps are", all_sorted_gap[-10:])
 
 if type_expe == "gendered":
-    print("The global Gender Shift for", language, "in the", type_expe ,"setting is of", gender_shift(data_genre))
+    print("The global Gender Shift for", language, "in the", type_expe,"setting is of", gender_shift(data_genre))
+
