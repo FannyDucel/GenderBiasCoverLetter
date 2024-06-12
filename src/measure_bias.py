@@ -97,6 +97,7 @@ def gender_shift(df):
     # df.to_csv("gender_shift_noneutral.csv")
     return sum(df['gender_shift']) / len(df['gender_shift'])
 
+
 all_sorted_gap, all_masc_gap, all_fem_gap = gender_gap(topics)
 mean_gap_total = sum([el[1] for el in all_sorted_gap])/len(all_sorted_gap)
 print("The global Gender Gap for", language, "in the", type_expe ,"setting is of", mean_gap_total)
