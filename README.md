@@ -27,18 +27,18 @@ The goal of these experiments is to generate cover letters with autoregressive l
 `pip install requirements.txt`
 
 ### 1. Generate cover letters with LLMs
-`python generation.py [model] [language] [setting]`, i.e `python generation_lm.py gpt2-fr FR neutral`.
+`python src/generation.py [model] [language] [setting]`, i.e `python generation_lm.py gpt2-fr FR neutral`.
 
 /!/ Some models require a large amount of VRAM, hence the use of GPUs. We ran them on Grid5k.
 
 Other LLMs can be tested by adding its HuggingFace path #TODO.
 
 ### 2. Use the gender detection system
-`python gender_detection_fr.py` will create the automatically annotated CSV files for French.
+`python src/gender_detection_fr.py` will create the automatically annotated CSV files for French.
 
 ### 3. Evaluate the gender detection system
-`python detection_evaluation.py` returns classification reports based on manual annotations.
+`python src/detection_evaluation.py` returns classification reports based on manual annotations.
 
 ### 4. Compute metrics, get figures
+`python src/measure_bias.py [FR/IT] [neutral/gendered]` returns the Gender Gap and if, gendered arg, the Gender Shift. To be used choosing FR or IT, neutral OR gendered, e.g.: `python src/measure_bias.py FR gendered`.
 Run the various .ipynb files.
-
