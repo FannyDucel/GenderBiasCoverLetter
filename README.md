@@ -2,9 +2,11 @@
 
 Warning: Repo under construction. Python files are being refactored and enhanced.
 
+The experiment and framework are presented in the following TALN publication: "Évaluation automatique des biais de genre dans des modèles de langue auto-régressif", Fanny Ducel, Aurélie Névéol, Karën Fort. [https://inria.hal.science/hal-04621134/document]?
+
 ## Introduction
 
-This repository contains all data and code used in [REF] to run the experiences on gender bias in generated cover letters. 
+This repository contains all data and code used in [https://inria.hal.science/hal-04621134/document] to run the experiences on gender bias in generated cover letters. 
 
 The goal of these experiments is to generate cover letters with autoregressive language models in French and Italian. In one setting, the prompts do not mention any gender, and in the other setting, the prompt contains one gender marker. We then use a rule-based gender detection system to analyze the gender markers used in the generated text. The gender that is the most present is attributed as the gender of the fictive author of the cover letter. Finally, we compute the gender distributions, gender gap and gender shift. We estimate that a language model is biased if, for a given occupation, the generated texts favor a specific gender over another.
 
@@ -19,7 +21,7 @@ The goal of these experiments is to generate cover letters with autoregressive l
 
 - **results**: 2 subfolders per language : *bias\_evaluation*, with mostly figures (and a few CSV files) obtained from computing the different bias metrics (gender distributions, gender gap, gender shift), and *detection\_system\_eval*, with the classification report from the gender detection system.
 
-- **src**: Contains the core Python files to generate texts with language models, run the gender detection system, and evaluate the gender detection system. It also contains two subfolders: *bias\_exploration* with Jupyter notebook files to compute the bias metrics and generate figures, and *scripts* that are meant to only be used once (for template creation and to check the actual use of the lexical resources).
+- **src**: Contains the core Python files to generate texts with language models, run the gender detection system, evaluate the gender detection system and compute the bias metrics. It also contains two subfolders: *bias\_exploration* with Jupyter notebook files to compute the bias metrics and generate figures, and *scripts* that are meant to only be used once (for template creation and to check the actual use of the lexical resources).
 
 
 ## How to reproduce the experiments? (#TODO, in construction)
