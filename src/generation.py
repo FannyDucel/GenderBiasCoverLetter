@@ -14,7 +14,8 @@ models = {
     "vigogne-2-7b":"bofenghuang/vigogne-2-7b-instruct",
     "bloom-7b":"bigscience/bloom-7b1",
     "bloom-560m": "bigscience/bloom-560m",
-    "bloom-3b":"bigscience/bloom-3b"
+    "bloom-3b":"bigscience/bloom-3b",
+    "croissant":"croissantllm/CroissantLLMBase"
 }
 
 def generate_prompt(text, model, tokenizer, gen_args):
