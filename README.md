@@ -2,11 +2,13 @@
 
 Warning: Repo under construction. Python files are being refactored and enhanced.
 
-The experiment and framework are presented in the following TALN publication: "Évaluation automatique des biais de genre dans des modèles de langue auto-régressif", Fanny Ducel, Aurélie Névéol, Karën Fort. [https://inria.hal.science/hal-04621134/document]?
+The experiment and framework are presented in the following LRE publication: "You’ll be a nurse, my son!" Automatically Assessing Gender Biases in Autoregressive Language Models in French and Italian. Fanny Ducel, Aurélie Névéol, Karën Fort. Language Resources and Evaluation. [https://inria.hal.science/hal-04803403]
+
+It is also presented in the associated French version (TALN): "Évaluation automatique des biais de genre dans des modèles de langue auto-régressif", Fanny Ducel, Aurélie Névéol, Karën Fort. [https://inria.hal.science/hal-04621134/document]
 
 ## Introduction
 
-This repository contains all data and code used in [https://inria.hal.science/hal-04621134/document] to run the experiences on gender bias in generated cover letters. 
+This repository contains all data and code used in [https://inria.hal.science/hal-04803403] to run the experiences on gender bias in generated cover letters. 
 
 The goal of these experiments is to generate cover letters with autoregressive language models in French and Italian. In one setting, the prompts do not mention any gender, and in the other setting, the prompt contains one gender marker. We then use a rule-based gender detection system to analyze the gender markers used in the generated text. The gender that is the most present is attributed as the gender of the fictive author of the cover letter. Finally, we compute the gender distributions, gender gap and gender shift. We estimate that a language model is biased if, for a given occupation, the generated texts favor a specific gender over another.
 
