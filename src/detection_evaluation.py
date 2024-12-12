@@ -1,12 +1,21 @@
 from datetime import datetime
 import pandas as pd
+import numpy as np
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import classification_report
 
 def prec_recall_fscore(language):
     """Use sklearn to get classification report and overall precision, recall and fscore
-    by comparing manual and automatic gender labels on the manually annotated generations."""
-    file_path = f"annotated_texts/{language}/annotated-manual_annotation_{language}.csv"
+    by comparing manual and automatic gender labels on the corpus of manually annotated generations.
+
+    Args:
+        param1: Desired language (FR or IT).
+
+    Returns:
+        Precision, recall, fscore and support, and creates a txt file with the detailed classification report.
+
+    """
+    file_path = f"../annotated_texts/{language}/annotated-manual_annotation_{language.lower()}.csv"
 
     df = pd.read_csv(file_path)
 
@@ -18,6 +27,9 @@ def prec_recall_fscore(language):
         df = df[df['Identified_gender'] != "incomplet"]
         n_annote = df.genre.count()
         y_true = df["genre"].loc[:n_annote].to_numpy()
+    else:
+        print("Please choose FR or IT.")
+        exit()
 
     y_pred = df["Identified_gender"].loc[:n_annote].to_numpy()
 
@@ -28,7 +40,6 @@ def prec_recall_fscore(language):
         print(classification_report(y_true, y_pred, digits=4), file=f) #target_names=labels,
 
     return prec, recall, fscore, support
-
 
 print(prec_recall_fscore("FR"))
 print(prec_recall_fscore("IT"))

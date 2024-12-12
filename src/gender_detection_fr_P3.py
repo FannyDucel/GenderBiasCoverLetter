@@ -1,4 +1,6 @@
-"""Adaptation for third person singular for French."""
+#TODO: clean/translate/paste from P1 file
+"""Gender detection system for THIRD person singular in French. Based on morpho-syntactic gender markers
+and leveraging semantic information. Adapted from gender_detection_fr.py that was for first person singular."""
 
 import json
 import pandas as pd
