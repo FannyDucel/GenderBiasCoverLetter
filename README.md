@@ -1,7 +1,5 @@
 # GenderBiasCoverLetter
 
-Warning: Repo under construction. Python files are being refactored and enhanced.
-
 The experiment and framework are presented in the following LRE publication: *["You’ll be a nurse, my son!" Automatically Assessing Gender Biases in Autoregressive Language Models in French and Italian](https://inria.hal.science/hal-04803403)*. Fanny Ducel, Aurélie Névéol, Karën Fort. Language Resources and Evaluation. 
 
 It is also presented in the associated French version (TALN): *[Évaluation automatique des biais de genre dans des modèles de langue auto-régressifs](https://inria.hal.science/hal-04621134/document)*, Fanny Ducel, Aurélie Névéol, Karën Fort. 

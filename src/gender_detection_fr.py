@@ -5,6 +5,8 @@ import json
 import pandas as pd
 import spacy
 from collections import Counter
+from tqdm import tqdm
+from tqdm.auto import tqdm
 
 nlp = spacy.load("fr_dep_news_trf")
 
@@ -13,28 +15,28 @@ def get_gender(text, language="FR", details=False):
     markers in a text.
 
     Args:
-        text: The text to be analyzed (= for which we want to find the author's gender).
-        language: FR by default
-        details: A bool, (False by default), True to get the details (token, lemma, pos, dep, gender, number) of all tokens that are detected as gender markers, False otherwise.
+        text (str): The text to be analyzed (= for which we want to find the author's gender).
+        language (str): FR by default
+        details (bool): (False by default), True to get the details (token, lemma, pos, dep, gender, number) of all tokens that are detected as gender markers, False otherwise.
 
     Returns:
         res, Counter_gender, gender_markers
-        res: the majority gender of the text (i.e. the annotated gender of the author of the text)
-        Counter_gender: the details of the numbers of markers found per gender
-        gender_markers: the list of identified gender markers
+        res (str): the majority gender of the text (i.e. the annotated gender of the author of the text)
+        Counter_gender (Counter): the details of the numbers of markers found per gender
+        gender_markers (list): the list of identified gender markers
     """
     text = text.replace("  ", " ")
 
     doc = nlp(text)
 
     #list of gender-neutral (épicène) job titles from DELA, with Profession:fs:ms, to check and filter out if they're identified as Masc when used without a masc DET
-    with open(f"data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
+    with open(f"../data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
         epicene_jobs = json.load(f)
 
-    with open(f"data/{language}/lexical_resources/lexical_res_{language}.json", encoding="utf-8") as f:
+    with open(f"../data/{language}/lexical_resources/lexical_res_{language}.json", encoding="utf-8") as f:
         agents_hum = json.load(f)
 
-    # list of the gender tags identified in the adj/verbs of the text
+    # list of identified gender tags in the adj/verbs of the text
     gender = []
     # list of the tokens that have a gender tag (and are adj/verbs)
     gender_markers = []
@@ -68,7 +70,7 @@ def get_gender(text, language="FR", details=False):
             # 3. Manage cases where the generation (without the prompt) starts with: (car) particulièrement motivée... (because especially motivated)
             cond_partmt = len(this_sent)>2 and "car" in this_sent[-3] and "particulièrement" in this_sent[-2] and cond_pos
 
-            # 4. Manage cases with groups (syntagmes) such as "un poste de chef" (a chief position)
+            # 4. Manage cases with groups (syntagmes) such as "un poste de chef" (a chief potion)
             cond_titre = len(this_sent)>2 and cond_je_avt and ("poste" in this_sent[-3] or "emploi" in this_sent[-3] or "formation" in this_sent[-3] or "diplôme" in this_sent[-3] or "stage" in this_sent[-3] or "contrat" in this_sent[-3]) and "de" in this_sent[-2] and cond_agt
 
             # Manually fix Spacy mistakes (mislabeling some Feminine words as Masculine ones)
@@ -83,8 +85,6 @@ def get_gender(text, language="FR", details=False):
                 if token_gender and token.text.lower() not in epicene_jobs and "(" not in token.text.lower() and token.text.lower() not in erreurs_genre: #(e
                     gender.append(token_gender[0])
                     gender_markers.append(token)
-                #else:
-                    #gender.append(gender[-1])
                 else:
                     # Managing epicene nouns here: if they are preceded by a masculine/feminine articles, we put them in the corresponding gender category, else in neutral.
                     if (token.text.lower() in epicene_jobs and this_sent[-2] in ["un-det", "le-det"]) or token.text.lower()=="chef" and "chef" not in [str(tok) for tok in gender_markers]:
@@ -119,8 +119,7 @@ def get_gender(text, language="FR", details=False):
 
 
 def apply_gender_detection(csv_path, setting):
-    """Processus de détection de genre et ajout des résultats dans des nouveaux CSV"""
-    """Apply gender detection system (from function get_gender) on the generations contained in a CSV file and append 
+    """Apply gender detection system (from function get_gender) on the generations contained in a CSV file and append
     the results (manual annotations) in a new CSV file.
 
     Args:
@@ -145,11 +144,10 @@ def apply_gender_detection(csv_path, setting):
     total_counter = [] #list with all counters to get dic with identified genders details for each letter
     total_markers = [] #same for gendered words that led to this gender identification
 
-    for i,lettre in enumerate(lm):
+    for i,lettre in tqdm(enumerate(lm)):
         #print(i,lettre)
         # Separate prompt sentences from the rest
         prompt2 = ".".join(prompt[i].split(".")[:-1])
-        phrase_prompt = prompt[i].split(".")[-1]
         lettre_noprompt = lettre.split(prompt[i])[-1]
         lettre = lettre.split(prompt2)[-1]
         # filter out the incomplete generations : less than 5 tokens + loop on one token = less than 5 unique tokens
@@ -161,7 +159,7 @@ def apply_gender_detection(csv_path, setting):
         total_gender.append(gender[0])
         total_counter.append(gender[1])
         total_markers.append(gender[2])
-        theme = df_lm["Theme"][i]  #"Theme"
+        theme = df_lm["Theme"][i]
 
         if theme not in total_gender_theme:
             total_gender_theme[theme]=[]

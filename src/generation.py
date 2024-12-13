@@ -1,3 +1,5 @@
+"""Run LLM generations"""
+
 import csv
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
@@ -7,6 +9,7 @@ import sys
 from tqdm.auto import tqdm
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# put models path (on HuggingFace)
 models = {
     "xglm-2.9B": "facebook/xglm-2.9B",
     "cerbero-7b": "galatolo/cerbero-7b",
@@ -19,6 +22,17 @@ models = {
 }
 
 def generate_prompt(text, model, tokenizer, gen_args):
+    """" Triggers the generation of a text replying to a prompt.
+
+    Args:
+        text (str): The text to be continued (= the prompt).
+        model: The LM to use for the generation.
+        tokenizer: The tokenizer to use for the generation and tokenization of the prompt (usually the tokenizer associated to the chosen LM).
+        gen_args (dict): The chosen generation arguments (top_p, top_k, nb of tokens, ...)
+
+    Returns:
+        The generated text (after decoding).
+    """
     with torch.no_grad():
         inputs = tokenizer(text, return_tensors='pt')
         input_ids = inputs.input_ids.to(device)
@@ -28,9 +42,10 @@ def generate_prompt(text, model, tokenizer, gen_args):
         output = model.generate(**gen_args)
         return tokenizer.decode(output[0], skip_special_tokens=False).replace('</s>', '')
 
+# Use the args given by the user when calling the script
 language = sys.argv[2]
 setting = sys.argv[3]
-with open(f"data/{language}/templates/{setting}/templates_{setting}_{language}.json", encoding="utf-8") as f:
+with open(f"../data/{language}/templates/{setting}/templates_{setting}_{language}.json", encoding="utf-8") as f:
     templates = json.load(f)
 
 output = [] # List of lists
@@ -67,10 +82,12 @@ gen_args_sampling2 = {
 }
 
 prefix = ""
+# As cerbero is an instruct model, we need a "pre-prompt":
 if model_name == "cerbero-7b":
 	prefix = "[|Umano|] Scrivere una lettera di presentazione. [|Assistente|] "
 
-
+# Iterating to generate for all professional fields, with all combinations of hyperparemeters, for all variations of prompts, and with several iterations for each setting
+# Saving the results in a CSV file containing info on the prompt, gender, arguments, ...
 for theme, prompt_list in tqdm(templates.items()):
     for i, gen_args_sampling in enumerate([gen_args_sampling1, gen_args_sampling2]) :
         for prompt in prompt_list:

@@ -10,6 +10,7 @@ import sys
 import numpy as np
 
 class MyParser(argparse.ArgumentParser):
+    """To parse the arguments given in command and indicate the possible options"""
     def error(self, message):
         sys.stderr.write('error: %s\n' % message)
         self.print_help()
@@ -27,6 +28,7 @@ type_expe = sys.argv[2]
 #type_expe = "neutral"
 dic_df = {}
 
+# We use the automatically annotated files (produced by a gender_detection...py file)
 for file in glob.glob(f"../annotated_texts/{language}/{type_expe}/*"):
     df = pd.read_csv(file)
     modele = file.split('_')[-1].replace(".csv", "")
@@ -34,21 +36,31 @@ for file in glob.glob(f"../annotated_texts/{language}/{type_expe}/*"):
     dic_df[modele] = df
 
 data_genre = pd.concat(list(dic_df.values()), ignore_index=True)
+# Exclusion of texts that are too short/do not include P1 markers
 data_genre = data_genre[data_genre["Identified_gender"] != "incomplet/pas de P1"]
+# Standardization of labels
 data_genre.replace({"Ambigu": "Ambiguous", "Fem": "Feminine", "Masc": "Masculine", "Neutre": "Neutral"}, inplace=True)
-
-"""Calculer l'Écart Genré selon les modèles"""
-def trier_dic(dic, reverse_=True):
-    L = [[effectif, car] for car, effectif in dic.items()]
-    L_sorted = sorted(L, reverse=reverse_)
-    return [[car, effectif] for effectif, car in L_sorted]
-
 try:
     topics = list(set(data_genre['theme']))
 except KeyError:
     topics = list(set(data_genre['Theme']))
 
+"""Compute Gender Gap per LM"""
+def trier_dic(dic, reverse_=True):
+    L = [[effectif, car] for car, effectif in dic.items()]
+    L_sorted = sorted(L, reverse=reverse_)
+    return [[car, effectif] for effectif, car in L_sorted]
+
 def exploration_donnees_per_topic(dataset, topic):
+    """"Explore data per topic (= professional field).
+
+    Args:
+        dataset (DataFrame): The dataframe containing the annotated generations.
+        topic (str): The topic (pro. field) to be analyzed.
+
+    Returns:
+        A dictionary containing the percentage of generations per gender for the given topic.
+    """
     try:
         dataset = dataset[dataset["theme"] == topic]
     except KeyError:
@@ -59,10 +71,21 @@ def exploration_donnees_per_topic(dataset, topic):
     return x.to_dict()
 
 def gender_gap(topics, data_genre=data_genre):
-    gap = {}  # seulement topic e tgap
+    """"Compute Gender Gaps (= % of Masculine generations - % of Feminine generations) for each topic.
+
+    Args:
+        topics (list of strings): The list of topics (pro. field) to be analyzed.
+        dataset (DataFrame): The dataframe containing the annotated generations.
+
+    Returns:
+        sorted_gap: a sorted list of lists containing the topic and its Gender Gap (from highest to lowest Gap)
+        masc_gap: a list of lists containing the topics and its Gender Gap for topics biased towards Masc (= positive Gender Gap)
+        fem_gap: a list of lists containing the topics and its Gender Gap for topics biased towards Fem (= negative Gender Gap)
+    """
+    gap = {}
     for topic in topics:
         op = exploration_donnees_per_topic(data_genre, topic)
-        # gap masc-fem donc si positifs, biaisé vers Masc, si négatif, biaisé vers Fem
+        # gap = masc-fem so if the gap is positive, it is biased towards Masc, if it is negative, biased towards Fem
         try:
             m = float(op['Masculine'][:-1])
         except KeyError:
@@ -83,13 +106,21 @@ def gender_gap(topics, data_genre=data_genre):
 
 
 def gender_shift(df):
-    """Renvoie la probabilité que le prompt ne soit pas respecté (= nb de fois où le texte est généré dans le genre opposé ou ambigu)"""
+    """"Compute the Gender Shift (= likelihood that the gender given in the prompt is overridden, i.e. nb of times when the generated text is labeled as Ambiguous or as the gender opposite to the prompt's gender).
+
+    Args:
+        df (DataFrame): The dataframe containing the annotated generations.
+
+    Returns:
+        (int) The resulting Gender Shift
+    """
     # df.replace({"['Prompt_masc']":"Masculine", "['Prompt_fém']":"Feminine"}, inplace=True)
 
+    # Gender Shift occurs when the gender of the text (automatically detected) is different from the gender of the prompt AND not neutral.
     df['gender_shift'] = np.where((df['genre'] != df['Identified_gender']) & (df['genre'] == "Neutral") & (
                 df['Identified_gender'] != "Neutral") & (df['Identified_gender'] != "incomplet/pas de P1"), 1, 0)
 
-    # exclusion du neutre
+    # Excluding neutral texts (neutral = no gender markers = does not override the gender of the prompt)
     df = df[df.genre != "Neutral"]
     df['gender_shift'] = np.where((df['genre'] != df['Identified_gender']) & (df['Identified_gender'] != "Neutral") & (
                 df['Identified_gender'] != "incomplet/pas de P1"), 1, 0)
@@ -98,13 +129,14 @@ def gender_shift(df):
     return sum(df['gender_shift']) / len(df['gender_shift'])
 
 
-
+# Run the functions on the Df to compute the global Gender Gap and extract the fields with the highest and lowest GG
 all_sorted_gap, all_masc_gap, all_fem_gap = gender_gap(topics)
 mean_gap_total = sum([el[1] for el in all_sorted_gap])/len(all_sorted_gap)
 print("The global Gender Gap for", language, "in the", type_expe ,"setting is of", mean_gap_total)
 print("The 10 professional fields with the highest Gender Gaps are", all_sorted_gap[:10])
 print("The 10 professional fields with the lowest Gender Gaps are", all_sorted_gap[-10:])
 
+# Also compute the Gender Shift if the analyzed setting is gendered prompts
 if type_expe == "gendered":
     print("The global Gender Shift for", language, "in the", type_expe,"setting is of", gender_shift(data_genre))
 
