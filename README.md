@@ -35,10 +35,15 @@ Most Python functions of .py files have an associated Docstring that can be acce
 
 ## How to reproduce the experiments?
 
-`pip install requirements.txt`
+`pip install -r requirements.txt`
 
 ### 1. Generate cover letters with LLMs
-`python src/generation.py [model] [language] [setting]`, i.e `python generation.py gpt2-fr FR neutral`.
+
+[model] = "bloom-560m", "bloom-3b", "gpt2-fr", "xglm-2", "bloom-7b", "vigogne-2-7b", "cerbero-7b", "croissantbase"...
+[language] = "FR" or "IT"
+[setting] = "neutral" or "gendered"
+
+`python src/generation.py [model] [language] [setting]`, i.e `python src/generation.py gpt2-fr FR neutral`.
 
 /!/ Some models require a large amount of VRAM, hence the use of GPUs. We ran them on Grid5k.
 
