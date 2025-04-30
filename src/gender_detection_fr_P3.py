@@ -33,10 +33,10 @@ def get_gender(text, language="FR", details=False):
     doc = nlp(text)
 
     #list of gender-neutral (épicène) job titles from DELA, with Profession:fs:ms, to check and filter out if they're identified as Masc when used without a masc DET
-    with open(f"../data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
+    with open(f"./data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
         epicene_jobs = json.load(f)
 
-    with open(f"../data/{language}/lexical_resources/lexical_res_P3_{language}.json", encoding="utf-8") as f:
+    with open(f"./data/{language}/lexical_resources/lexical_res_P3_{language}.json", encoding="utf-8") as f:
         agents_hum = json.load(f)
 
     # Removing nouns referring to medical or judiciary jobs that often appear (in clinical cases) but to mention another person, not the patient

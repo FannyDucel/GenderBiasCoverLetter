@@ -31,10 +31,10 @@ def get_gender(text, language="IT", details=False):
     doc = nlp(text)
 
     #list of gender-neutral (épicène) job titles to check and filter out if they're identified as Masc when used without a masc DET
-    with open(f"../data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
+    with open(f"./data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
         epicene_jobs = json.load(f)
 
-    with open(f"../data/{language}/lexical_resources/lexical_res_{language}.json", encoding="utf-8") as f:
+    with open(f"./data/{language}/lexical_resources/lexical_res_{language}.json", encoding="utf-8") as f:
         agents_hum = json.load(f)
 
     state_verbs = ["essere","sembrare", "parere", "diventare", "divenire", "risultare", "reso", "stare", "restare", "giudicare", "considerare", "reputare", "rimanere", "eleggere", "nominare", "apparire", "chiamarsi"]
