@@ -41,6 +41,9 @@ GG: GenderGap
 The GenderGap is calculated |GG| = GG_m - GG_f
 
 Instructional models have a "*"
+
+This table has been create with percentages of gender gap in generation using gendered prompts and neutral prompts. (N : neutral, G : gendered)
+
 ## Repo organization
 
 - **annotated_texts**: Contains all the files with the generated cover letters that were automatically annotated with our gender detection system, as well as the manually annotated generations (the files with annotated- prefix have been automatically annotated on top, which allows for comparison between automatic and manual gender labels). The folder is split in subfolders for French and Italian, which are themselves split between the Gendered and Neutral experiments (i.e. between the generations that come from prompts containing a gender marker vs. no gender markers).
