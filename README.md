@@ -29,7 +29,7 @@ Finally, we compute the **gender distributions, gender gap and gender shift**. W
 | 5        | gemma-2-2b                    | 30,27       | 23,7          | /            | 10,39          | /            | 56,71    |
 | 6        | *gpt2-fr*                     | 31,66       | 12,81         | /            | 21,81          | /            | 60,35    |
 | 7        | *bloom-7b*                    | 32,25       | 11,04         | /            | 19,93          | /            | 65,78    |
-| 8        | croissant-chat                | 33,88       | 23,89         | /            | 11,44          | /            | 66,32    |
+| 8        | croissant-chat*                | 33,88       | 23,89         | /            | 11,44          | /            | 66,32    |
 | 9        | *bloom-3b*                    | 36,00       | 18,95         | /            | 17,23          | /            | 71,82    |
 | 10       | gemma-2-2b-it*                 | 38,05       | 57,18         | /            | 10,39          | /            | 46,59    |
 | 11       | mistral-7b-instruct-v0.3*      | 38,52       | 47,67         | /            | /              | 0,35          | 67,53    |
@@ -40,6 +40,7 @@ Finally, we compute the **gender distributions, gender gap and gender shift**. W
 GG: GenderGap  
 The GenderGap is calculated |GG| = GG_m - GG_f
 
+Instructional models have a "*"
 ## Repo organization
 
 - **annotated_texts**: Contains all the files with the generated cover letters that were automatically annotated with our gender detection system, as well as the manually annotated generations (the files with annotated- prefix have been automatically annotated on top, which allows for comparison between automatic and manual gender labels). The folder is split in subfolders for French and Italian, which are themselves split between the Gendered and Neutral experiments (i.e. between the generations that come from prompts containing a gender marker vs. no gender markers).
