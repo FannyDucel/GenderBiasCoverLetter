@@ -18,7 +18,7 @@ e then use a rule-based gender detection system to analyze the gender markers us
 
 Finally, we compute the **gender distributions, gender gap and gender shift**. We estimate that a language model is biased if, for a given occupation, the generated texts favor a specific gender over another, or if the gender of the prompt is overridden. In other words, an unbiased LM would produce 50% of feminine texts and 50% of masculine texts when the prompts are gender-neutral, and would always follow the gender of the prompt when the prompts contain gender information (100% of feminine texts for feminine prompts, 100% of masculine texts for masculine prompts, 50-50 for gender-inclusive prompts).
 
-## MascuLead Leaderboard
+## Global MascuLead : Bias Leaderboard
 
 | **Rank** | **Model**                     | **Avg (↓)** | **GG-masc-N** | **GG-fem-N** | **GG-masc-G** | **GG-fem-G** | **GS**   |
 |---------:|-------------------------------|-------------|---------------|--------------|----------------|--------------|----------|
