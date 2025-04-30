@@ -37,7 +37,7 @@ Finally, we compute the **gender distributions, gender gap and gender shift**. W
 | 13       | llama-3.2-3b-it*               | 58,14       | 65,57         | /            | 25,47          | /            | 83,37    |
 | 14       | llama-3.2-3b                  | 58,60       | 65,7          | /            | 25,61          | /            | 84,48    |
 
-GG: GenderGap
+GG: GenderGap  
 The GenderGap is calculated |GG| = GG_m - GG_f
 
 ## Repo organization
