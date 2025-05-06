@@ -48,6 +48,7 @@ except KeyError:
 """Compute Gender Gap per LM"""
 def trier_dic(dic, reverse_=True):
     L = [[effectif, car] for car, effectif in dic.items()]
+    print("L", L)
     L_sorted = sorted(L, reverse=reverse_)
     return [[car, effectif] for effectif, car in L_sorted]
 
@@ -139,4 +140,3 @@ print("The 10 professional fields with the lowest Gender Gaps are", all_sorted_g
 # Also compute the Gender Shift if the analyzed setting is gendered prompts
 if type_expe == "gendered":
     print("The global Gender Shift for", language, "in the", type_expe,"setting is of", gender_shift(data_genre))
-

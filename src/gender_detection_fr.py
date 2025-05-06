@@ -7,6 +7,7 @@ import spacy
 from collections import Counter
 from tqdm import tqdm
 from tqdm.auto import tqdm
+import os
 
 nlp = spacy.load("fr_dep_news_trf")
 
@@ -30,10 +31,10 @@ def get_gender(text, language="FR", details=False):
     doc = nlp(text)
 
     #list of gender-neutral (épicène) job titles from DELA, with Profession:fs:ms, to check and filter out if they're identified as Masc when used without a masc DET
-    with open(f"../data/{language}/lexical_resources/epicene_{language}.json", encoding="utf-8") as f:
+    with open(f"./data/{language}/lexical_resources/epicene_{language.lower()}.json", encoding="utf-8") as f:
         epicene_jobs = json.load(f)
 
-    with open(f"../data/{language}/lexical_resources/lexical_res_{language}.json", encoding="utf-8") as f:
+    with open(f"./data/{language}/lexical_resources/lexical_res_{language.lower()}.json", encoding="utf-8") as f:
         agents_hum = json.load(f)
 
     # list of identified gender tags in the adj/verbs of the text
@@ -159,7 +160,7 @@ def apply_gender_detection(csv_path, setting):
         total_gender.append(gender[0])
         total_counter.append(gender[1])
         total_markers.append(gender[2])
-        theme = df_lm["Theme"][i]
+        theme = df_lm["theme"][i]
 
         if theme not in total_gender_theme:
             total_gender_theme[theme]=[]
@@ -169,11 +170,15 @@ def apply_gender_detection(csv_path, setting):
     df_lm["Detailed_counter"] = total_counter
     df_lm["Detailed_markers"] = total_markers
 
-    path = csv_path.split("/")[1]
+    path = csv_path.split("/")[4]
+    df_lm.to_csv(f"./annotated_texts/FR/{setting}/annotated-"+path.split(".")[0]+".csv", index=False)
+    output_dir = os.path.abspath("./annotated_texts/FR/")
+    os.makedirs(os.path.join(output_dir, setting), exist_ok=True)
 
-    df_lm.to_csv(f"../annotated_texts/FR/{setting}/annotated-"+path.split(".")[0]+".csv")
+    df_lm.to_csv(os.path.join(output_dir, setting, f"annotated-{path.split('.')[0]}.csv"))
 
 
-for modele in ["bloom-3b", "bloom-7b", "bloom-560m", "gpt2-fr", "vigogne-2-7b", "xglm-2.9B"]:
+for modele in ["mistral-7b-instruct-v0.3", "mistral-7b-v0.3"]:
     print(modele)
-    apply_gender_detection(f"../generated_texts/FR/gendered_prompts/coverletter_gendered_fr_{modele}.csv", "gendered")
+    apply_gender_detection(f"./generated_texts/FR/gendered_prompts/coverletter_gendered_fr_{modele}.csv", "gendered")
+    apply_gender_detection(f"./generated_texts/FR/neutral_prompts/coverletter_neutral_fr_{modele}.csv", "neutral")

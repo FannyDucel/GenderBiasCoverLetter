@@ -18,6 +18,31 @@ e then use a rule-based gender detection system to analyze the gender markers us
 
 Finally, we compute the **gender distributions, gender gap and gender shift**. We estimate that a language model is biased if, for a given occupation, the generated texts favor a specific gender over another, or if the gender of the prompt is overridden. In other words, an unbiased LM would produce 50% of feminine texts and 50% of masculine texts when the prompts are gender-neutral, and would always follow the gender of the prompt when the prompts contain gender information (100% of feminine texts for feminine prompts, 100% of masculine texts for masculine prompts, 50-50 for gender-inclusive prompts).
 
+## Global MascuLead : Bias Leaderboard
+
+| **Rank** | **Model**                     | **Avg (↓)** | **GG-masc-N** | **GG-fem-N** | **GG-masc-G** | **GG-fem-G** | **GS**   |
+|---------:|-------------------------------|-------------|---------------|--------------|----------------|--------------|----------|
+| 1        | *xglm-2*                      | 13,64       | 1,08          | /            | 7,05           | /            | 32,79    |
+| 2        | mistral-7b-v0.3               | 17,87       | 0,71          | /            | /              | 7,73          | 45,18    |
+| 3        | croissantbase                 | 24,98       | /             | 8,15         | 9,07           | /            | 57,71    |
+| 4        | *bloom-560m*                  | 27,35       | 15,82         | /            | 1,15           | /            | 65,09    |
+| 5        | gemma-2-2b                    | 30,27       | 23,7          | /            | 10,39          | /            | 56,71    |
+| 6        | *gpt2-fr*                     | 31,66       | 12,81         | /            | 21,81          | /            | 60,35    |
+| 7        | *bloom-7b*                    | 32,25       | 11,04         | /            | 19,93          | /            | 65,78    |
+| 8        | croissant-chat*                | 33,88       | 23,89         | /            | 11,44          | /            | 66,32    |
+| 9        | *bloom-3b*                    | 36,00       | 18,95         | /            | 17,23          | /            | 71,82    |
+| 10       | gemma-2-2b-it*                 | 38,05       | 57,18         | /            | 10,39          | /            | 46,59    |
+| 11       | mistral-7b-instruct-v0.3*      | 38,52       | 47,67         | /            | /              | 0,35          | 67,53    |
+| 12       | *vigogne-2-7b*                | 50,77       | 69,23         | /            | 18,4           | /            | 64,69    |
+| 13       | llama-3.2-3b-it*               | 58,14       | 65,57         | /            | 25,47          | /            | 83,37    |
+| 14       | llama-3.2-3b                  | 58,60       | 65,7          | /            | 25,61          | /            | 84,48    |
+
+GG: GenderGap  
+The GenderGap is calculated |GG| = GG_m - GG_f
+
+Instructional models have a "*"
+
+This table has been create with percentages of gender gap in generation using gendered prompts and neutral prompts. (N : neutral, G : gendered)
 
 ## Repo organization
 
@@ -35,10 +60,15 @@ Most Python functions of .py files have an associated Docstring that can be acce
 
 ## How to reproduce the experiments?
 
-`pip install requirements.txt`
+`pip install -r requirements.txt`
 
 ### 1. Generate cover letters with LLMs
-`python src/generation.py [model] [language] [setting]`, i.e `python generation.py gpt2-fr FR neutral`.
+
+[modeles] = "bloom-560m", "bloom-3b", "gpt2-fr", "xglm-2", "bloom-7b", "vigogne-2-7b","croissantbase","croissant-it","llama-3.2-3b-it","llama-3.2-3b","gemma-2-2b","gemma-2-2b-it","mistral-7b-instruct-v0.3", "mistral-7b-v0.3"  
+[language] = "FR" or "IT"  
+[setting] = "neutral" or "gendered"  
+
+`python src/generation.py [model] [language] [setting]`, i.e `python src/generation.py gpt2-fr FR neutral`.
 
 /!/ Some models require a large amount of VRAM, hence the use of GPUs. We ran them on Grid5k.
 
