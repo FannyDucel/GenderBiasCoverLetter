@@ -119,7 +119,7 @@ def get_gender(text, language="FR", details=False):
     return res, Counter_gender, gender_markers
 
 
-def apply_gender_detection(csv_path, setting):
+def apply_gender_detection(csv_path, setting, modele):
     """Apply gender detection system (from function get_gender) on the generations contained in a CSV file and append
     the results (manual annotations) in a new CSV file.
 
@@ -171,14 +171,14 @@ def apply_gender_detection(csv_path, setting):
     df_lm["Detailed_markers"] = total_markers
 
     path = csv_path.split("/")[4]
-    df_lm.to_csv(f"./annotated_texts/FR/{setting}/annotated-"+path.split(".")[0]+".csv", index=False)
+    df_lm.to_csv(f"./annotated_texts/FR/{setting}/annotated-coverletter_{setting}_fr_{modele}.csv", index=False)
     output_dir = os.path.abspath("./annotated_texts/FR/")
     os.makedirs(os.path.join(output_dir, setting), exist_ok=True)
+    df_lm.to_csv(os.path.join(output_dir, setting, f"annotated-coverletter_{setting}_fr_{modele}.csv"))
+    print(df_lm)
 
-    df_lm.to_csv(os.path.join(output_dir, setting, f"annotated-{path.split('.')[0]}.csv"))
 
-
-for modele in ["mistral-7b-instruct-v0.3", "mistral-7b-v0.3"]:
+for modele in ["llama-3.2-3b"]:
     print(modele)
-    apply_gender_detection(f"./generated_texts/FR/gendered_prompts/coverletter_gendered_fr_{modele}.csv", "gendered")
-    apply_gender_detection(f"./generated_texts/FR/neutral_prompts/coverletter_neutral_fr_{modele}.csv", "neutral")
+    #apply_gender_detection(f"./generated_texts/FR/gendered_prompts/coverletter_gendered_fr_{modele}.csv", "gendered")
+    apply_gender_detection(f"./generated_texts/FR/neutral_prompts/coverletter_neutral_fr_{modele}.csv", "neutral", modele)
